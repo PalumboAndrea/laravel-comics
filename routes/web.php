@@ -14,5 +14,40 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $comics = config('comics');
+    $headerMenuItems = [
+        [
+            "name" => "characters",
+        ],
+        [
+            "name" => "comics",
+        ],
+        [
+            "name" => "movies",
+        ],
+        [
+            "name" => "tv",
+        ],
+        [
+            "name" => "games",
+        ],
+        [
+            "name" => "collectibles",
+        ],
+        [
+            "name" => "videos",
+        ],
+        [
+            "name" => "fans",
+        ],
+        [
+            "name" => "news",
+        ],
+        [
+            "name" => "shop",
+        ]
+    ];
+    return view('home', ['comics' => $comics], ['headerMenuItems' => $headerMenuItems]);
 });
+
+
